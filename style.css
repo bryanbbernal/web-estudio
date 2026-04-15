@@ -1,130 +1,51 @@
-:root {
-    --bg-color: #000000;
-    --text-color: #ffffff;
-    --accent-color: #f2f2f2;
-    --gray-muted: #888888;
+.artist-grid-links {
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.4;
-    letter-spacing: -0.02em;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 100px 20px;
-}
-
-/* Tipografía Estilo EPK */
-h1 {
-    font-weight: 900;
-    font-size: 8vw;
-    line-height: 0.9;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
-.section-label {
-    display: block;
-    font-weight: 700;
-    color: var(--gray-muted);
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-}
-
-p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    max-width: 700px;
-    margin-bottom: 20px;
-}
-
-/* Header & Nav */
-header {
-    padding: 30px 20px;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(10px);
-}
-
-.nav-container {
+.artist-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: auto;
+    padding: 20px;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
-.logo {
-    font-weight: 900;
-    letter-spacing: 2px;
+.artist-item:hover {
+    border-color: var(--nous-blue);
+    background: #111;
 }
 
-.logo span { font-weight: 300; }
-
-nav ul { display: flex; list-style: none; }
-nav ul li a {
-    color: var(--text-color);
+.btn-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--nous-blue);
+    color: white;
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 700;
-    margin-left: 30px;
+    border-radius: 4px;
+    margin-left: 10px;
+    text-transform: uppercase;
 }
 
-/* Secciones */
-#hero {
-    height: 100vh;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 100px;
-    padding-left: 5%;
+.btn-link:hover {
+    background-color: white;
+    color: var(--nous-blue);
 }
 
-.dark { background-color: #0a0a0a; }
-
-.artist-grid ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.artist-grid li {
-    font-size: 1.5rem;
-    font-weight: 700;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-}
-
-footer {
-    padding: 40px;
-    text-align: center;
-    font-size: 0.7rem;
-    color: var(--gray-muted);
-    border-top: 1px solid #222;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    h1 { font-size: 15vw; }
-    h2 { font-size: 1.8rem; }
-    .artist-grid ul { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+    .artist-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .btn-link {
+        margin-left: 0;
+        margin-right: 10px;
+    }
 }
